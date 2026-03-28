@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Clinic</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body class="">
+    <!-- header -->
+    <header>
+        <div class="navbar py-4">
+            <div class="container">
+                <nav>
+                    <div class="navbar-brand">
+                        <a href="index.html"><svg width="177" height="48" viewBox="0 0 177 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.35467 24.1984C23.6338 31.3813 34.9866 23.5454 40.5559 19.3476C40.9129 19.0677 41.2699 18.7879 41.6983 18.508C43.412 17.1087 45.8396 14.9632 46.1252 14.59C45.197 14.8699 43.1264 15.896 40.6987 17.0154C41.4127 5.35486 38.4853 -7.42514 21.0633 5.26158C23.5624 8.1534 24.919 9.45939 29.2745 12.4445C29.2745 12.4445 25.7758 12.8176 18.2073 4.88844C10.496 -3.13404 2.64181 3.3026 5.21225 18.3214C5.42646 19.5341 6.06907 22.7991 6.35467 24.1984Z"
+                                    fill="#FF5B5B" />
+                                <path
+                                    d="M0 23.079C1.92784 25.3178 5.06949 28.676 7.85414 30.5417C11.8526 44.1613 17.9931 56.6614 20.2066 40.0568C20.9206 33.9933 25.9187 34.2731 27.9179 45.0941C29.7029 54.5159 37.5571 36.1388 39.9133 24.3849C40.0561 23.7319 40.4845 21.5864 40.5559 20.8401C23.3482 36.3254 0 23.079 0 23.079Z"
+                                    fill="#78C841" />
+                                <path
+                                    d="M38.6281 21.9595L46.1967 15.9893C46.1967 15.9893 41.8412 22.7991 36.9859 25.8775C36.0577 25.0379 38.6281 21.9595 38.6281 21.9595Z"
+                                    fill="#000326" />
+                                <path
+                                    d="M1.85645 22.1461C1.85645 22.1461 4.7839 24.5715 8.35396 25.8775C8.63957 24.4782 7.92556 23.2655 7.92556 23.2655C7.92556 23.2655 4.06989 23.079 1.85645 22.1461Z"
+                                    fill="#FF5B5B" />
+                                <path
+                                    d="M44.2688 11.1385C44.2688 11.1385 50.0523 12.1646 46.7678 19.7207C49.0527 18.3214 51.2661 10.299 44.2688 11.1385Z"
+                                    fill="#FF5B5B" />
+                                <path
+                                    d="M57.6986 20.5413V11.814H61.3378C61.9912 11.814 62.5381 11.9063 62.9784 12.091C63.4216 12.2756 63.754 12.5342 63.9756 12.8665C64.2 13.1989 64.3122 13.5839 64.3122 14.0214C64.3122 14.3538 64.2426 14.6506 64.1034 14.912C63.9642 15.1705 63.7725 15.385 63.5281 15.5555C63.2838 15.7259 63.0012 15.8452 62.6801 15.9134V15.9986C63.0324 16.0157 63.3577 16.1109 63.656 16.2842C63.9571 16.4575 64.1986 16.6989 64.3804 17.0086C64.5622 17.3154 64.6531 17.679 64.6531 18.0995C64.6531 18.5682 64.5338 18.9873 64.2952 19.3566C64.0566 19.7231 63.7114 20.0129 63.2597 20.2259C62.808 20.4361 62.2597 20.5413 61.6148 20.5413H57.6986ZM59.808 18.841H61.1119C61.5693 18.841 61.906 18.7543 62.1219 18.581C62.3406 18.4077 62.45 18.1663 62.45 17.8566C62.45 17.6322 62.3975 17.439 62.2923 17.2771C62.1872 17.1123 62.0381 16.9859 61.8449 16.8978C61.6517 16.8069 61.4202 16.7614 61.1503 16.7614H59.808V18.841ZM59.808 15.4021H60.9756C61.2057 15.4021 61.4102 15.3637 61.5892 15.287C61.7682 15.2103 61.9074 15.0995 62.0068 14.9546C62.1091 14.8097 62.1602 14.635 62.1602 14.4305C62.1602 14.1379 62.0566 13.9077 61.8492 13.7401C61.6418 13.5725 61.3619 13.4887 61.0097 13.4887H59.808V15.4021ZM65.6673 20.5413V11.814H69.2725C69.9259 11.814 70.4898 11.9319 70.9642 12.1677C71.4415 12.4006 71.8094 12.7359 72.0679 13.1734C72.3264 13.608 72.4557 14.1236 72.4557 14.7202C72.4557 15.3254 72.3236 15.8396 72.0594 16.2629C71.7952 16.6833 71.4202 17.0043 70.9344 17.2259C70.4486 17.4447 69.8733 17.554 69.2085 17.554H66.9287V15.8921H68.8165C69.1347 15.8921 69.4003 15.8509 69.6134 15.7685C69.8293 15.6833 69.9926 15.5555 70.1034 15.385C70.2142 15.2117 70.2696 14.9901 70.2696 14.7202C70.2696 14.4504 70.2142 14.2273 70.1034 14.0512C69.9926 13.8722 69.8293 13.7387 69.6134 13.6506C69.3975 13.5597 69.1318 13.5143 68.8165 13.5143H67.7767V20.5413H65.6673ZM70.5807 16.5526L72.754 20.5413H70.4529L68.3222 16.5526H70.5807ZM75.722 11.814V20.5413H73.6127V11.814H75.722ZM82.7735 14.6648C82.7252 14.4859 82.6542 14.3282 82.5605 14.1918C82.4667 14.0526 82.3517 13.9347 82.2153 13.8381C82.0789 13.7415 81.9227 13.6691 81.7465 13.6208C81.5704 13.5697 81.3772 13.5441 81.167 13.5441C80.7437 13.5441 80.3772 13.6464 80.0676 13.8509C79.7607 14.0555 79.5235 14.3538 79.3559 14.7458C79.1883 15.135 79.1045 15.608 79.1045 16.1648C79.1045 16.7245 79.1855 17.2018 79.3474 17.5967C79.5093 17.9915 79.7437 18.2927 80.0505 18.5001C80.3573 18.7075 80.7295 18.8111 81.167 18.8111C81.5534 18.8111 81.8801 18.7486 82.1471 18.6236C82.417 18.4958 82.6215 18.3154 82.7607 18.0825C82.8999 17.8495 82.9695 17.5754 82.9695 17.26L83.3616 17.3069H81.2394V15.7685H85.0022V16.9234C85.0022 17.7046 84.836 18.3736 84.5036 18.9305C84.1741 19.4873 83.7195 19.9148 83.14 20.2131C82.5633 20.5114 81.8999 20.6606 81.1499 20.6606C80.3176 20.6606 79.586 20.4802 78.9553 20.1194C78.3247 19.7586 77.8332 19.2444 77.4809 18.5768C77.1286 17.9063 76.9525 17.1109 76.9525 16.1904C76.9525 15.4745 77.059 14.8396 77.2721 14.2856C77.4852 13.7288 77.782 13.2572 78.1627 12.8708C78.5463 12.4844 78.9894 12.1918 79.4923 11.993C79.998 11.7941 80.542 11.6947 81.1244 11.6947C81.6301 11.6947 82.1002 11.7671 82.5349 11.912C82.9724 12.0569 83.3588 12.2614 83.694 12.5256C84.032 12.7898 84.3062 13.1038 84.5164 13.4674C84.7267 13.831 84.8573 14.2302 84.9085 14.6648H82.7735ZM86.2455 20.5413V11.814H88.3548V15.3168H91.7938V11.814H93.8989V20.5413H91.7938V17.0342H88.3548V20.5413H86.2455ZM94.9365 13.5271V11.814H102.313V13.5271H99.6666V20.5413H97.5871V13.5271H94.9365ZM110.639 14.4305C110.61 14.118 110.484 13.8751 110.259 13.7018C110.038 13.5256 109.721 13.4376 109.309 13.4376C109.036 13.4376 108.809 13.4731 108.627 13.5441C108.445 13.6151 108.309 13.7131 108.218 13.8381C108.127 13.9603 108.08 14.1009 108.078 14.26C108.072 14.3907 108.097 14.5057 108.154 14.6052C108.214 14.7046 108.299 14.7927 108.41 14.8694C108.524 14.9432 108.66 15.0086 108.819 15.0654C108.978 15.1222 109.157 15.1719 109.356 15.2146L110.106 15.385C110.538 15.4788 110.918 15.6038 111.248 15.76C111.58 15.9163 111.859 16.1023 112.083 16.3182C112.31 16.5342 112.482 16.7827 112.599 17.064C112.715 17.3452 112.775 17.6606 112.778 18.01C112.775 18.5611 112.636 19.0342 112.36 19.429C112.085 19.8239 111.688 20.1265 111.171 20.3367C110.657 20.5469 110.036 20.6521 109.309 20.6521C108.579 20.6521 107.943 20.5427 107.4 20.3239C106.857 20.1052 106.435 19.7728 106.134 19.3268C105.833 18.8807 105.678 18.3168 105.67 17.635H107.69C107.707 17.9163 107.782 18.1506 107.916 18.3381C108.049 18.5256 108.232 18.6677 108.465 18.7643C108.701 18.8609 108.974 18.9092 109.283 18.9092C109.568 18.9092 109.809 18.8708 110.008 18.7941C110.21 18.7174 110.364 18.6109 110.472 18.4745C110.58 18.3381 110.636 18.1819 110.639 18.0057C110.636 17.841 110.585 17.7004 110.485 17.5839C110.386 17.4646 110.232 17.3623 110.025 17.2771C109.82 17.189 109.559 17.108 109.241 17.0342L108.329 16.8211C107.573 16.6478 106.978 16.368 106.543 15.9816C106.109 15.5924 105.893 15.0668 105.896 14.4049C105.893 13.8651 106.038 13.3921 106.33 12.9859C106.623 12.5796 107.028 12.2629 107.545 12.0356C108.062 11.8083 108.651 11.6947 109.313 11.6947C109.989 11.6947 110.576 11.8097 111.073 12.0398C111.573 12.2671 111.961 12.5867 112.237 12.9986C112.512 13.4106 112.653 13.8879 112.658 14.4305H110.639ZM113.843 11.814H116.455L118.671 17.2174H118.774L120.989 11.814H123.602V20.5413H121.548V15.1805H121.475L119.379 20.4859H118.066L115.97 15.1506H115.897V20.5413H113.843V11.814ZM127.027 11.814V20.5413H124.917V11.814H127.027ZM128.351 20.5413V11.814H130.46V18.8282H134.091V20.5413H128.351ZM135.183 20.5413V11.814H141.268V13.5271H137.292V15.3168H140.957V17.0342H137.292V18.8282H141.268V20.5413H135.183Z"
+                                    fill="#78C841" />
+                                <path
+                                    d="M61.2483 38.5413H57.7536V29.0867H61.2437C62.207 29.0867 63.0364 29.276 63.732 29.6545C64.4306 30.03 64.9692 30.5717 65.3477 31.2795C65.7263 31.9843 65.9156 32.8276 65.9156 33.8094C65.9156 34.7942 65.7263 35.6406 65.3477 36.3484C64.9723 37.0563 64.4352 37.5995 63.7366 37.978C63.038 38.3535 62.2085 38.5413 61.2483 38.5413ZM60.0388 36.5931H61.1606C61.69 36.5931 62.1378 36.5039 62.504 36.3254C62.8733 36.1438 63.1518 35.8499 63.3396 35.4436C63.5304 35.0343 63.6258 34.4895 63.6258 33.8094C63.6258 33.1292 63.5304 32.5875 63.3396 32.1844C63.1488 31.7781 62.8672 31.4857 62.4948 31.3072C62.1254 31.1257 61.67 31.0349 61.1283 31.0349H60.0388V36.5931ZM67.2497 38.5413V29.0867H73.8421V30.9425H69.5349V32.8815H73.5051V34.7419H69.5349V36.6854H73.8421V38.5413H67.2497ZM83.3197 29.0867V38.5413H81.3808L77.6183 33.0846H77.5583V38.5413H75.2732V29.0867H77.2398L80.9607 34.5342H81.0392V29.0867H83.3197ZM84.4473 30.9425V29.0867H92.4384V30.9425H89.5716V38.5413H87.3187V30.9425H84.4473ZM94.4189 38.5413H91.9629L95.1529 29.0867H98.1951L101.385 38.5413H98.9292L96.7086 31.4688H96.6348L94.4189 38.5413ZM94.0911 34.8204H99.2246V36.5562H94.0911V34.8204ZM102.403 38.5413V29.0867H104.688V36.6854H108.621V38.5413H102.403ZM121.179 32.5121H118.871C118.84 32.2752 118.777 32.0613 118.682 31.8704C118.586 31.6796 118.46 31.5165 118.303 31.3811C118.146 31.2457 117.96 31.1426 117.745 31.0718C117.532 30.9979 117.297 30.961 117.038 30.961C116.58 30.961 116.184 31.0733 115.852 31.298C115.523 31.5227 115.269 31.8474 115.09 32.2721C114.915 32.6968 114.827 33.2108 114.827 33.814C114.827 34.4418 114.916 34.9681 115.095 35.3928C115.276 35.8145 115.53 36.133 115.857 36.3484C116.186 36.5608 116.575 36.667 117.025 36.667C117.277 36.667 117.506 36.6347 117.712 36.57C117.922 36.5054 118.105 36.4115 118.262 36.2884C118.422 36.1622 118.553 36.0099 118.654 35.8314C118.759 35.6498 118.831 35.4451 118.871 35.2174L121.179 35.2312C121.139 35.6498 121.018 36.0622 120.815 36.4685C120.615 36.8747 120.339 37.2456 119.988 37.581C119.638 37.9134 119.21 38.1781 118.705 38.3751C118.203 38.572 117.628 38.6705 116.978 38.6705C116.123 38.6705 115.357 38.4828 114.679 38.1073C114.005 37.7288 113.473 37.1779 113.082 36.4546C112.691 35.7314 112.496 34.8512 112.496 33.814C112.496 32.7737 112.694 31.892 113.091 31.1687C113.488 30.4455 114.025 29.8961 114.703 29.5207C115.38 29.1452 116.138 28.9575 116.978 28.9575C117.551 28.9575 118.08 29.0375 118.566 29.1975C119.053 29.3545 119.481 29.5853 119.85 29.89C120.219 30.1916 120.519 30.5624 120.75 31.0026C120.981 31.4427 121.124 31.9459 121.179 32.5121ZM122.487 38.5413V29.0867H124.772V36.6854H128.705V38.5413H122.487ZM132.174 29.0867V38.5413H129.888V29.0867H132.174ZM141.655 29.0867V38.5413H139.716L135.953 33.0846H135.893V38.5413H133.608V29.0867H135.575L139.296 34.5342H139.374V29.0867H141.655ZM145.377 29.0867V38.5413H143.092V29.0867H145.377ZM155.393 32.5121H153.085C153.054 32.2752 152.991 32.0613 152.896 31.8704C152.8 31.6796 152.674 31.5165 152.517 31.3811C152.36 31.2457 152.174 31.1426 151.959 31.0718C151.746 30.9979 151.511 30.961 151.252 30.961C150.794 30.961 150.398 31.0733 150.066 31.298C149.737 31.5227 149.483 31.8474 149.304 32.2721C149.129 32.6968 149.041 33.2108 149.041 33.814C149.041 34.4418 149.13 34.9681 149.309 35.3928C149.49 35.8145 149.744 36.133 150.07 36.3484C150.4 36.5608 150.789 36.667 151.238 36.667C151.491 36.667 151.72 36.6347 151.926 36.57C152.136 36.5054 152.319 36.4115 152.476 36.2884C152.636 36.1622 152.767 36.0099 152.868 35.8314C152.973 35.6498 153.045 35.4451 153.085 35.2174L155.393 35.2312C155.353 35.6498 155.232 36.0622 155.029 36.4685C154.829 36.8747 154.553 37.2456 154.202 37.581C153.851 37.9134 153.424 38.1781 152.919 38.3751C152.417 38.572 151.842 38.6705 151.192 38.6705C150.337 38.6705 149.57 38.4828 148.893 38.1073C148.219 37.7288 147.687 37.1779 147.296 36.4546C146.905 35.7314 146.71 34.8512 146.71 33.814C146.71 32.7737 146.908 31.892 147.305 31.1687C147.702 30.4455 148.239 29.8961 148.916 29.5207C149.593 29.1452 150.352 28.9575 151.192 28.9575C151.765 28.9575 152.294 29.0375 152.78 29.1975C153.267 29.3545 153.694 29.5853 154.064 29.89C154.433 30.1916 154.733 30.5624 154.964 31.0026C155.195 31.4427 155.338 31.9459 155.393 32.5121Z"
+                                    fill="#FF5B5B" />
+                            </svg></a>
+                    </div>
+
+                    <div class="nav-list">
+                        <ul>
+                            <li><a class="nav-link active" href="index.html">Home</a></li>
+                            <li><a class="nav-link" href="">About</a></li>
+                            <li><a class="nav-link" href="">Service</a></li>
+                            <li><a class="nav-link" href="">Contact</a></li>
+                            <li><a class="nav-link" href="">Doctors</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-actions">
+                        <div class="act-btn">
+                            <button>
+                                <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22.4 22.4C23.1426 22.4 23.8548 22.695 24.3799 23.2201C24.905 23.7452 25.2 24.4574 25.2 25.2C25.2 25.9426 24.905 26.6548 24.3799 27.1799C23.8548 27.705 23.1426 28 22.4 28C21.6574 28 20.9452 27.705 20.4201 27.1799C19.895 26.6548 19.6 25.9426 19.6 25.2C19.6 23.646 20.846 22.4 22.4 22.4ZM0 0H4.578L5.894 2.8H26.6C26.9713 2.8 27.3274 2.9475 27.59 3.21005C27.8525 3.4726 28 3.8287 28 4.2C28 4.438 27.93 4.676 27.832 4.9L22.82 13.958C22.344 14.812 21.42 15.4 20.37 15.4H9.94L8.68 17.682L8.638 17.85C8.638 17.9428 8.67487 18.0318 8.74051 18.0975C8.80615 18.1631 8.89517 18.2 8.988 18.2H25.2V21H8.4C7.65739 21 6.9452 20.705 6.4201 20.1799C5.895 19.6548 5.6 18.9426 5.6 18.2C5.6 17.71 5.726 17.248 5.936 16.856L7.84 13.426L2.8 2.8H0V0ZM8.4 22.4C9.14261 22.4 9.8548 22.695 10.3799 23.2201C10.905 23.7452 11.2 24.4574 11.2 25.2C11.2 25.9426 10.905 26.6548 10.3799 27.1799C9.8548 27.705 9.14261 28 8.4 28C7.65739 28 6.9452 27.705 6.4201 27.1799C5.895 26.6548 5.6 25.9426 5.6 25.2C5.6 23.646 6.846 22.4 8.4 22.4ZM21 12.6L24.892 5.6H7.196L10.5 12.6H21Z" />
+                                </svg>
+                            </button>
+                            <button>
+                                <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.3556 20.7112C7.46136 20.7112 5.01212 19.7086 3.00791 17.7033C1.0037 15.6981 0.00106296 13.2488 8.42948e-07 10.3556C-0.00106127 7.46242 1.00157 5.01318 3.00791 3.00791C5.01424 1.00264 7.46348 0 10.3556 0C13.2478 0 15.6975 1.00264 17.7049 3.00791C19.7123 5.01318 20.7144 7.46242 20.7112 10.3556C20.7112 11.5239 20.5254 12.6259 20.1536 13.6615C19.7819 14.697 19.2774 15.6131 18.6401 16.4097L27.5619 25.3314C27.854 25.6235 28 25.9953 28 26.4467C28 26.8981 27.854 27.2698 27.5619 27.5619C27.2698 27.854 26.8981 28 26.4467 28C25.9953 28 25.6235 27.854 25.3314 27.5619L16.4097 18.6401C15.6131 19.2774 14.697 19.7819 13.6615 20.1536C12.6259 20.5254 11.5239 20.7112 10.3556 20.7112ZM10.3556 17.5249C12.3471 17.5249 14.0401 16.8281 15.4347 15.4347C16.8292 14.0412 17.526 12.3481 17.5249 10.3556C17.5238 8.36309 16.8271 6.67061 15.4347 5.27818C14.0422 3.88575 12.3492 3.18847 10.3556 3.18634C8.36203 3.18422 6.66955 3.8815 5.27818 5.27818C3.88681 6.67486 3.18953 8.36734 3.18634 10.3556C3.18316 12.3439 3.88044 14.0369 5.27818 15.4347C6.67592 16.8324 8.3684 17.5291 10.3556 17.5249Z" />
+                                </svg></button>
+                        </div>
+
+                        <div class="user-btn">
+                            <a class="btn btn-white" href="#">Sign In</a>
+                            <a class="btn btn-blue" href="#">Sign Up</a>
+                        </div>
+
+                        <!-- Mobile Toggle -->
+                        <button class="nav-toggle">
+                            <span></span>
+                            <span></span><span></span>
+
+
+                        </button>
+                    </div>
+
+
+                    <!-- MOBILE MENU -->
+                    <div id="mobileMenu" class="mobile-menu hidden xl:hidden">
+                        <!-- flex -->
+
+                        <!-- Nav Links -->
+                        <ul>
+                            <li><a class="nav-link active" href="#">Home</a></li>
+                            <li><a class="nav-link" href="#">About</a></li>
+                            <li><a class="nav-link" href="#">Service</a></li>
+                            <li><a class="nav-link" href="#">Contact</a></li>
+                            <li><a class="nav-link" href="#">Doctors</a></li>
+                        </ul>
+
+                        <!-- Buttons -->
+                        <div class="nav-btns">
+                            <a class="btn btn-white" href="#">Sign In</a>
+                            <a class="btn btn-blue" href="#">Sign Up</a>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="banner">
+            <div class="container">
+                <div class="flex flex-col">
+                    <div class="bnr-cnt">
+                        <h1>Your Smile, Our Priority</h1>
+                        <p class="sec-des">
+                            Ready to start your journey to a healthier, more confident smile? Book your appointment
+                            today with The Fine Tooth Company and experience care that puts you first.</p>
+                    </div>
+                    <div class="bnr-btn">
+                        <a href="" class="btn btn-blue">Book Now</a>
+                        <a href="" class="btn btn-white flex items-center gap-3">
+                            <span>Watch Vidio</span></a>
+                    </div>
+                </div>
+                <div
+                    class="mt-10 md:mt-15 lg:mt-20 flex justify-start gap-10 md:gap-15 lg:gap-20 xl:gap-25 2xl:gap-33 items-center p-6 md:p-8 lg:p-8 xl:p-10 2xl:p-12 rounded-[30px] bg-springwood w-fit">
+                    <div class="flex flex-col justify-center items-center">
+                        <div
+                            class="p-3 md:p-4 lg:p-5 xl:p-6 2xl:p-6.25 rounded-full bg-feijoa flex justify-center items-center w-fit mb-3">
+                            <img src="./assets/banner/dental-restoration.svg" alt="">
+                        </div>
+                        <div class="font-inter text-center">
+                            <span
+                                class="block text-[16px] md:text-[18px] xl:text-[20px] 2xl:text-2xl font-semibold leading-6 lg:leading-8 2xl:leading-10">5700+</span>
+                            <span
+                                class="block text-[12px] md:text-[13px] lg:text-[14px] 2xl:text-[16px] font-medium leading-5">Dental
+                                Restoration</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-between items-center">
+                        <div
+                            class="p-3 md:p-4 lg:p-5 xl:p-6 2xl:p-6.25 rounded-full bg-feijoa flex justify-center items-center w-fit mb-3">
+                            <img src="./assets/banner/dental-rohnocus.svg" alt="">
+                        </div>
+                        <div class="font-inter text-center">
+                            <span
+                                class="block text-[16px] md:text-[18px] xl:text-[20px] 2xl:text-2xl font-semibold leading-6 lg:leading-8 2xl:leading-10">9
+                                of 10</span>
+                            <span
+                                class="block text-[12px] md:text-[13px] lg:text-[14px] 2xl:text-[16px] font-medium leading-5">Mauris
+                                rhoncus</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center items-center">
+                        <div
+                            class="p-3 md:p-4 lg:p-5 xl:p-6 2xl:p-6.25 rounded-full bg-feijoa flex justify-center items-center w-fit mb-3">
+                            <img src="./assets/banner/dental-implant.svg" alt="">
+                        </div>
+                        <div class="font-inter text-center">
+                            <span
+                                class="block text-[16px] md:text-[18px] xl:text-[20px] 2xl:text-2xl font-semibold leading-6 lg:leading-8 2xl:leading-10">1000+</span>
+                            <span
+                                class="block text-[12px] md:text-[13px] lg:text-[14px] 2xl:text-[16px] font-medium leading-5">Dental
+                                Implants</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div
+                    class="hidden 2xl:block absolute xl:top-[10%] 2xl:top-[35%] xl:left-[60%] 2xl:left-[75%] p-9.75 pr-14.75 bg-white/60 w-fit rounded-[20px]">
+                    <div class="max-w-82.5">
+                        <div class="mb-2.5"><img src="./assets/banner/open-quote.svg" alt=""></div>
+                        <span class="block text-nileblue font-inter text-12px lg:text-[14px] 2xl:text-[16px]">Ready to
+                            start your journey to a healthier, more confident smile? Book your appointment
+                            today with The Fine Tooth Company and experience care that puts you first. </span>
+                        <strong class="block font-semibold mt-6">DR Tran Nguyan</strong>
+
+                    </div>
+                </div>
+                <div
+                    class="hidden 2xl:block absolute top-[72%] left-[65%] p-9.75 pr-14.75 bg-white/60 w-fit rounded-[20px]">
+                    <div class="max-w-82.5">
+                        <div class="mb-2.5"><img src="./assets/banner/open-quote.svg" alt=""></div>
+                        <span class="block text-nileblue font-inter text-12px lg:text-[14px] 2xl:text-[16px]">Ready to
+                            start your journey to a healthier, more confident smile? Book your appointment
+                            today with The Fine Tooth Company and experience care that puts you first. </span>
+                        <strong class="block font-semibold mt-6">DR Salini Ganguly</strong>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="welcome">
+            <div class="container">
+                <h2>Welcome to The Bright Smile Dental Care</h2>
+                <p class="sec-des max-w-350 w-full mx-auto mb-4 md:mb-8 xl:mb-12">At The Fine Tooth Company, we believe
+                    in providing exceptional dental care in a friendly, comfortable, and caring environment. With
+                    over 50 years of combined experience, we are committed to delivering comprehensive dental solutions
+                    to meet the needs of your entire family.We are here to ensure your smile stays healthy and
+                    beautiful.</p>
+                <div class="btn btn-blue mx-auto ">Book Now</div>
+            </div>
+        </section>
+        <section class="treats">
+            <div class="container">
+                <h2>Explore Our Treats for Teeth</h2>
+
+                <div class="treats-wrp">
+                    <div class="treats-card">
+                        <div class="treats-img-wrp"><img src="./assets/treats/full-mouth-restoration.png"
+                                class="object-cover aspect-square" alt="full mouth restoration"></div>
+                        <h3>Full mouth <span class="sm:block text-center">restoration</span></h3>
+                    </div>
+                    <div class="treats-card">
+                        <div class="treats-img-wrp"><img src="./assets/treats/dental-implants.png"
+                                class="object-cover aspect-square" alt="dental implant"></div>
+                        <h3>Dental Implants</h3>
+                    </div>
+                    <div class="treats-card">
+                        <div class="treats-img-wrp"><img src="./assets/treats/dental-scaling.png"
+                                class="object-cover aspect-square" alt="dental scaling"></div>
+                        <h3>Dental Scaling</h3>
+                    </div>
+                    <div class="treats-card">
+                        <div class="treats-img-wrp"><img src="./assets/treats/sleep-dentistry.png"
+                                class="object-cover aspect-square" alt="sleep dentistry"></div>
+                        <h3>Sleep Dentistry</h3>
+                    </div>
+                    <div class="treats-card">
+                        <div class="treats-img-wrp"><img src="./assets/treats/full-arch-implants.png"
+                                class="object-cover aspect-square" alt="full arch implants"></div>
+                        <h3>Full arch implants</h3>
+                    </div>
+                    <div class="treats-card">
+                        <div class="treats-img-wrp"><img src="./assets/treats/clear-aligners.png"
+                                class="object-cover aspect-square" alt="clear aligners"></div>
+                        <h3>Clear aligners</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="why-choose">
+            <div class="container">
+                <h2>Why Choose The Bright Smile Dental Care ?</h2>
+                <!-- <img src="./assets/why-choose/stethoscopes.svg" alt=""> -->
+                <div class="why-main-wrp">
+                    <div class="why-sub-wrp order-1 lg:order-1">
+                        <div class="why-card">
+                            <h3 class="">50+ Years of Combined Experience</h3>
+                            <p>Our team’s decades of experience ensure you receive expert care every time.</p>
+                            <div
+                                class="absolute bottom-2 right-1/2 translate-x-1/2 2xl:w-24 xl:w-22 lg:w-12 sm:w-12 w-10">
+                                <img src="./assets/why-choose/stethoscopes.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="why-card-img"><img src="./assets/why-choose/card-1.png" alt=""></div>
+                    </div>
+                    <div class="why-sub-wrp order-3 lg:order-2">
+                        <div class="why-card">
+                            <h3 class="">Advanced Technology</h3>
+                            <p>We use the latest dental tools and techniques to provide precise diagnoses and effective
+                                treatments.</p>
+                            <div
+                                class="absolute bottom-2 right-1/2 translate-x-1/2 2xl:w-24 xl:w-22 lg:w-12 sm:w-12 w-10">
+                                <img src="./assets/why-choose/tooth.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="why-card-img"><img src="./assets/why-choose/card-2.png" alt=""></div>
+                    </div>
+                    <div class="why-sub-wrp order-2 lg:order-3">
+                        <div class="why-card-img"><img src="./assets/why-choose/card-3.png" alt=""></div>
+
+                        <div class="why-card">
+                            <h3 class="">Gentle, Patient-Centered Care</h3>
+                            <p>We understand that visiting the dentist can be daunting, which is why we focus on
+                                creating a relaxing, comfortable environment.</p>
+                            <div
+                                class="absolute bottom-2 right-1/2 translate-x-1/2 2xl:w-24 xl:w-22 lg:w-12 sm:w-12 w-10">
+                                <img src="./assets/why-choose/dental.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-sub-wrp order-4 lg:order-4">
+                        <div class="why-card-img"><img src="./assets/why-choose/card-4.png" alt=""></div>
+
+                        <div class="why-card">
+                            <h3 class="">Specialist Care Available On-Site</h3>
+                            <p>We collaborate with top oral and maxillofacial surgeons to offer specialised treatments
+                                when needed.</p>
+                            <div
+                                class="absolute bottom-2 right-1/2 translate-x-1/2 2xl:w-24 xl:w-22 lg:w-12 sm:w-12 w-10">
+                                <img src="./assets/why-choose/dental-service.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="our-expart">
+            <div class="container">
+                <h2>Meet Our Expert Team of Dentists</h2>
+                <p class="sec-des mb-4 md:mb-8 xl:mb-12;">Our experienced team at The Fine Tooth Company is here to
+                    provide the best care possible for your oral health needs.</p>
+
+                <!-- Slider main container -->
+                <div class="swiper swiper-expert relative">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper exp-swiper-wrp mb-18">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="expert-card">
+                                <div class="expert-img">
+                                    <img src="./assets/our-expert/dr-shilani-piyasena.png" alt="dr shilani piyasena">
+                                </div>
+                                <div class="expert-details">
+                                    <h3>DR Shilani Piyasena</h3>
+                                    <p>Dr Shilani Piyasena (or just Dr Shilz to those who know her well) is the
+                                        Principal Dentist and Co-Director of The Fine Tooth Company.</p>
+                                    <strong>Principal Dentist & Co-Director</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="expert-card">
+                                <div class="expert-img">
+                                    <img src="./assets/our-expert/dr-yan-gould.png" alt="dr yan gould">
+                                </div>
+                                <div class="expert-details">
+                                    <h3>DR Yan Gould</h3>
+                                    <p>A trusted dentist in Croydon for over 30 years, Dr. Gould is renowned for his
+                                        thorough, expert care. His approach combines skill with a genuine commitment to
+                                        patient comfort.</p>
+                                    <strong>Dentist</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="expert-card">
+                                <div class="expert-img">
+                                    <img src="./assets/our-expert/dr-tran-nguyan.png" alt="dr tran nguyan">
+                                </div>
+                                <div class="expert-details">
+                                    <h3>DR Tran Nguyan</h3>
+                                    <p>A trusted dentist in Croydon for over 30 years, Dr. Gould is renowned for his
+                                        thorough, expert care. His approach combines skill with a genuine commitment to
+                                        patient comfort.</p>
+                                    <strong>Dentist</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="expert-card">
+                                <div class="expert-img">
+                                    <img src="./assets/our-expert/dr-yan-gould.png" alt="dr yan gould">
+                                </div>
+                                <div class="expert-details">
+                                    <h3>DR Yan Gould</h3>
+                                    <p>A trusted dentist in Croydon for over 30 years, Dr. Gould is renowned for his
+                                        thorough, expert care. His approach combines skill with a genuine commitment to
+                                        patient comfort.</p>
+                                    <strong>Dentist</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination expert-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="exp-nav-btn expert-prev">
+                        <svg width="29" height="48" viewBox="0 0 29 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M27.5754 42.6168C28.8789 43.8116 28.8784 45.8667 27.5744 47.0609C26.4222 48.1162 24.6545 48.116 23.5026 47.0603L1.23613 26.6552C0.844395 26.2983 0.533508 25.874 0.321362 25.4065C0.109216 24.9391 0 24.4378 0 23.9316C0 23.4253 0.109216 22.924 0.321362 22.4566C0.533508 21.9892 0.844395 21.5648 1.23613 21.208L23.5027 0.792112C24.6544 -0.263806 26.4222 -0.263883 27.5739 0.791935C28.8761 1.9857 28.8762 4.03867 27.5741 5.23256L7.18655 23.9258L27.5754 42.6168Z"
+                                fill="#000326" />
+                        </svg>
+                    </div>
+                    <div class="exp-nav-btn expert-next">
+                        <svg width="29" height="48" viewBox="0 0 29 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.977291 5.23527C-0.326118 4.04041 -0.325636 1.98536 0.978334 0.791107C2.13056 -0.264168 3.89819 -0.263905 5.0501 0.791714L27.3166 21.1969C27.7083 21.5537 28.0192 21.9781 28.2314 22.4455C28.4435 22.9129 28.5527 23.4142 28.5527 23.9205C28.5527 24.4268 28.4435 24.928 28.2314 25.3955C28.0192 25.8629 27.7083 26.2872 27.3166 26.6441L5.05001 47.0599C3.89837 48.1159 2.13055 48.1159 0.978821 47.0601C-0.323389 45.8663 -0.323483 43.8134 0.978617 42.6195L21.3662 23.9263L0.977291 5.23527Z"
+                                fill="#000326" />
+                        </svg>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </section>
+        <section class="service">
+            <div class="container">
+                <h2>Our Top Dental Care Services</h2>
+                <div class="service-wrp">
+                    <div class="service-card">
+                        <div class="service-img"><img src="./assets/service/service-01.png" alt=""></div>
+                        <div class="service-card-wrp">
+                            <div class="service-cnt">
+                                <h3>Pediatric Treatments</h3>
+                                <p>Varius duis at consectetur lorem donec massa sapien faucib nibh venenatis.</p>
+                            </div>
+                            <div class="service-mid">
+                                <div>
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13 0C20.1799 0 26 5.8201 26 13C26 20.1799 20.1799 26 13 26C5.8201 26 0 20.1799 0 13C0 5.8201 5.8201 0 13 0ZM13 2.6C10.2417 2.6 7.59647 3.69571 5.64609 5.64609C3.69571 7.59647 2.6 10.2417 2.6 13C2.6 15.7583 3.69571 18.4035 5.64609 20.3539C7.59647 22.3043 10.2417 23.4 13 23.4C15.7583 23.4 18.4035 22.3043 20.3539 20.3539C22.3043 18.4035 23.4 15.7583 23.4 13C23.4 10.2417 22.3043 7.59647 20.3539 5.64609C18.4035 3.69571 15.7583 2.6 13 2.6ZM13 5.2C13.3184 5.20004 13.6257 5.31694 13.8637 5.52853C14.1016 5.74012 14.2536 6.03167 14.2909 6.3479L14.3 6.5V12.4618L17.8191 15.9809C18.0523 16.2148 18.1876 16.5288 18.1977 16.8589C18.2078 17.189 18.0918 17.5106 17.8734 17.7584C17.6549 18.0061 17.3504 18.1614 17.0216 18.1927C16.6928 18.224 16.3644 18.129 16.1031 17.927L15.9809 17.8191L12.0809 13.9191C11.8789 13.7169 11.7491 13.4537 11.7117 13.1703L11.7 13V6.5C11.7 6.15522 11.837 5.82456 12.0808 5.58076C12.3246 5.33696 12.6552 5.2 13 5.2Z"
+                                            fill="#000326" />
+                                    </svg> <span>15 To 45 mins</span>
+                                </div>
+                                <div>
+
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M24.3587 10.0773C23.9212 9.62 23.4685 9.14875 23.2979 8.73438C23.14 8.35482 23.1307 7.72571 23.1214 7.11634C23.104 5.98348 23.0854 4.69973 22.1929 3.80714C21.3003 2.91455 20.0165 2.89598 18.8837 2.87857C18.2743 2.86929 17.6452 2.86 17.2656 2.70214C16.8524 2.53152 16.38 2.07884 15.9227 1.64125C15.1218 0.871696 14.2118 0 13 0C11.7882 0 10.8794 0.871696 10.0773 1.64125C9.62 2.07884 9.14875 2.53152 8.73438 2.70214C8.35714 2.86 7.72571 2.86929 7.11634 2.87857C5.98348 2.89598 4.69973 2.91455 3.80714 3.80714C2.91455 4.69973 2.90179 5.98348 2.87857 7.11634C2.86929 7.72571 2.86 8.35482 2.70214 8.73438C2.53152 9.14759 2.07884 9.62 1.64125 10.0773C0.871696 10.8794 0 11.7882 0 13C0 14.2118 0.871696 15.1206 1.64125 15.9227C2.07884 16.38 2.53152 16.8512 2.70214 17.2656C2.86 17.6452 2.86929 18.2743 2.87857 18.8837C2.89598 20.0165 2.91455 21.3003 3.80714 22.1929C4.69973 23.0854 5.98348 23.104 7.11634 23.1214C7.72571 23.1307 8.35482 23.14 8.73438 23.2979C9.14759 23.4685 9.62 23.9212 10.0773 24.3587C10.8782 25.1283 11.7882 26 13 26C14.2118 26 15.1206 25.1283 15.9227 24.3587C16.38 23.9212 16.8512 23.4685 17.2656 23.2979C17.6452 23.14 18.2743 23.1307 18.8837 23.1214C20.0165 23.104 21.3003 23.0854 22.1929 22.1929C23.0854 21.3003 23.104 20.0165 23.1214 18.8837C23.1307 18.2743 23.14 17.6452 23.2979 17.2656C23.4685 16.8524 23.9212 16.38 24.3587 15.9227C25.1283 15.1206 26 14.2118 26 13C26 11.7882 25.1283 10.8794 24.3587 10.0773ZM23.0181 14.6378C22.4621 15.2181 21.8864 15.8182 21.5812 16.5553C21.2887 17.2633 21.2759 18.0723 21.2643 18.8558C21.2527 19.6683 21.2399 20.5191 20.8789 20.8789C20.5179 21.2388 19.6729 21.2527 18.8558 21.2643C18.0723 21.2759 17.2633 21.2887 16.5553 21.5812C15.8182 21.8864 15.2181 22.4621 14.6378 23.0181C14.0574 23.5741 13.4643 24.1429 13 24.1429C12.5357 24.1429 11.9379 23.5718 11.3622 23.0181C10.7865 22.4645 10.1818 21.8864 9.44473 21.5812C8.7367 21.2887 7.92768 21.2759 7.1442 21.2643C6.3317 21.2527 5.48089 21.2399 5.12107 20.8789C4.76125 20.5179 4.74732 19.6729 4.73571 18.8558C4.72411 18.0723 4.71134 17.2633 4.41884 16.5553C4.11357 15.8182 3.53786 15.2181 2.98187 14.6378C2.42589 14.0574 1.85714 13.4643 1.85714 13C1.85714 12.5357 2.42821 11.9391 2.98187 11.3622C3.53554 10.7854 4.11357 10.1818 4.41884 9.44473C4.71134 8.7367 4.72411 7.92768 4.73571 7.1442C4.74732 6.3317 4.76009 5.48089 5.12107 5.12107C5.48205 4.76125 6.32705 4.74732 7.1442 4.73571C7.92768 4.72411 8.7367 4.71134 9.44473 4.41884C10.1818 4.11357 10.7819 3.53786 11.3622 2.98187C11.9426 2.42589 12.5357 1.85714 13 1.85714C13.4643 1.85714 14.0621 2.42821 14.6378 2.98187C15.2135 3.53554 15.8182 4.11357 16.5553 4.41884C17.2633 4.71134 18.0723 4.72411 18.8558 4.73571C19.6683 4.74732 20.5191 4.76009 20.8789 5.12107C21.2388 5.48205 21.2527 6.32705 21.2643 7.1442C21.2759 7.92768 21.2887 8.7367 21.5812 9.44473C21.8864 10.1818 22.4621 10.7819 23.0181 11.3622C23.5741 11.9426 24.1429 12.5357 24.1429 13C24.1429 13.4643 23.5718 14.0609 23.0181 14.6378ZM12.0714 9.28571C12.0714 8.73475 11.908 8.19616 11.602 7.73805C11.2959 7.27995 10.8608 6.92289 10.3518 6.71205C9.84274 6.50121 9.28262 6.44604 8.74225 6.55353C8.20187 6.66101 7.70551 6.92633 7.31592 7.31592C6.92633 7.70551 6.66101 8.20187 6.55353 8.74225C6.44604 9.28262 6.50121 9.84274 6.71205 10.3518C6.92289 10.8608 7.27995 11.2959 7.73805 11.602C8.19616 11.908 8.73475 12.0714 9.28571 12.0714C10.0245 12.0714 10.7331 11.7779 11.2555 11.2555C11.7779 10.7331 12.0714 10.0245 12.0714 9.28571ZM8.35714 9.28571C8.35714 9.10206 8.4116 8.92253 8.51364 8.76983C8.61567 8.61712 8.76069 8.49811 8.93036 8.42783C9.10004 8.35754 9.28674 8.33916 9.46687 8.37498C9.64699 8.41081 9.81245 8.49925 9.94231 8.62912C10.0722 8.75898 10.1606 8.92443 10.1964 9.10456C10.2323 9.28468 10.2139 9.47139 10.1436 9.64106C10.0733 9.81074 9.9543 9.95576 9.8016 10.0578C9.6489 10.1598 9.46937 10.2143 9.28571 10.2143C9.03944 10.2143 8.80326 10.1165 8.62912 9.94231C8.45497 9.76817 8.35714 9.53199 8.35714 9.28571ZM16.7143 13.9286C16.1633 13.9286 15.6247 14.0919 15.1666 14.398C14.7085 14.7041 14.3515 15.1392 14.1406 15.6482C13.9298 16.1573 13.8746 16.7174 13.9821 17.2578C14.0896 17.7981 14.3549 18.2945 14.7445 18.6841C15.1341 19.0737 15.6304 19.339 16.1708 19.4465C16.7112 19.554 17.2713 19.4988 17.7803 19.288C18.2894 19.0771 18.7244 18.7201 19.0305 18.2619C19.3366 17.8038 19.5 17.2652 19.5 16.7143C19.5 15.9755 19.2065 15.2669 18.6841 14.7445C18.1617 14.2221 17.4531 13.9286 16.7143 13.9286ZM16.7143 17.6429C16.5306 17.6429 16.3511 17.5884 16.1984 17.4864C16.0457 17.3843 15.9267 17.2393 15.8564 17.0696C15.7861 16.9 15.7677 16.7133 15.8036 16.5331C15.8394 16.353 15.9278 16.1875 16.0577 16.0577C16.1875 15.9278 16.353 15.8394 16.5331 15.8036C16.7133 15.7677 16.9 15.7861 17.0696 15.8564C17.2393 15.9267 17.3843 16.0457 17.4864 16.1984C17.5884 16.3511 17.6429 16.5306 17.6429 16.7143C17.6429 16.9606 17.545 17.1967 17.3709 17.3709C17.1967 17.545 16.9606 17.6429 16.7143 17.6429ZM18.2998 9.01411L9.01411 18.2998C8.92783 18.3861 8.82541 18.4545 8.71269 18.5012C8.59997 18.5479 8.47915 18.5719 8.35714 18.5719C8.23513 18.5719 8.11432 18.5479 8.0016 18.5012C7.88887 18.4545 7.78645 18.3861 7.70018 18.2998C7.6139 18.2135 7.54547 18.1111 7.49878 17.9984C7.45209 17.8857 7.42805 17.7649 7.42805 17.6429C7.42805 17.5208 7.45209 17.4 7.49878 17.2873C7.54547 17.1746 7.6139 17.0722 7.70018 16.9859L16.9859 7.70018C17.0722 7.6139 17.1746 7.54547 17.2873 7.49878C17.4 7.45209 17.5208 7.42805 17.6429 7.42805C17.7649 7.42805 17.8857 7.45209 17.9984 7.49878C18.1111 7.54547 18.2135 7.6139 18.2998 7.70018C18.3861 7.78645 18.4545 7.88887 18.5012 8.0016C18.5479 8.11432 18.5719 8.23513 18.5719 8.35714C18.5719 8.47915 18.5479 8.59997 18.5012 8.71269C18.4545 8.82541 18.3861 8.92783 18.2998 9.01411Z"
+                                            fill="#000326" />
+                                    </svg>
+                                    <span>From $100</span>
+                                </div>
+                            </div>
+                            <div class="service-btn">
+                                <a href="#">Booking</a>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img src="./assets/service/service-02.png" alt=""></div>
+                        <div class="service-card-wrp">
+                            <div class="service-cnt">
+                                <h3>Dental Fillings</h3>
+                                <p>Varius duis at consectetur lorem donec massa sapien faucib nibh venenatis.</p>
+                            </div>
+                            <div class="service-mid">
+                                <div>
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13 0C20.1799 0 26 5.8201 26 13C26 20.1799 20.1799 26 13 26C5.8201 26 0 20.1799 0 13C0 5.8201 5.8201 0 13 0ZM13 2.6C10.2417 2.6 7.59647 3.69571 5.64609 5.64609C3.69571 7.59647 2.6 10.2417 2.6 13C2.6 15.7583 3.69571 18.4035 5.64609 20.3539C7.59647 22.3043 10.2417 23.4 13 23.4C15.7583 23.4 18.4035 22.3043 20.3539 20.3539C22.3043 18.4035 23.4 15.7583 23.4 13C23.4 10.2417 22.3043 7.59647 20.3539 5.64609C18.4035 3.69571 15.7583 2.6 13 2.6ZM13 5.2C13.3184 5.20004 13.6257 5.31694 13.8637 5.52853C14.1016 5.74012 14.2536 6.03167 14.2909 6.3479L14.3 6.5V12.4618L17.8191 15.9809C18.0523 16.2148 18.1876 16.5288 18.1977 16.8589C18.2078 17.189 18.0918 17.5106 17.8734 17.7584C17.6549 18.0061 17.3504 18.1614 17.0216 18.1927C16.6928 18.224 16.3644 18.129 16.1031 17.927L15.9809 17.8191L12.0809 13.9191C11.8789 13.7169 11.7491 13.4537 11.7117 13.1703L11.7 13V6.5C11.7 6.15522 11.837 5.82456 12.0808 5.58076C12.3246 5.33696 12.6552 5.2 13 5.2Z"
+                                            fill="#000326" />
+                                    </svg> <span>15 To 45 mins</span>
+                                </div>
+                                <div>
+
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M24.3587 10.0773C23.9212 9.62 23.4685 9.14875 23.2979 8.73438C23.14 8.35482 23.1307 7.72571 23.1214 7.11634C23.104 5.98348 23.0854 4.69973 22.1929 3.80714C21.3003 2.91455 20.0165 2.89598 18.8837 2.87857C18.2743 2.86929 17.6452 2.86 17.2656 2.70214C16.8524 2.53152 16.38 2.07884 15.9227 1.64125C15.1218 0.871696 14.2118 0 13 0C11.7882 0 10.8794 0.871696 10.0773 1.64125C9.62 2.07884 9.14875 2.53152 8.73438 2.70214C8.35714 2.86 7.72571 2.86929 7.11634 2.87857C5.98348 2.89598 4.69973 2.91455 3.80714 3.80714C2.91455 4.69973 2.90179 5.98348 2.87857 7.11634C2.86929 7.72571 2.86 8.35482 2.70214 8.73438C2.53152 9.14759 2.07884 9.62 1.64125 10.0773C0.871696 10.8794 0 11.7882 0 13C0 14.2118 0.871696 15.1206 1.64125 15.9227C2.07884 16.38 2.53152 16.8512 2.70214 17.2656C2.86 17.6452 2.86929 18.2743 2.87857 18.8837C2.89598 20.0165 2.91455 21.3003 3.80714 22.1929C4.69973 23.0854 5.98348 23.104 7.11634 23.1214C7.72571 23.1307 8.35482 23.14 8.73438 23.2979C9.14759 23.4685 9.62 23.9212 10.0773 24.3587C10.8782 25.1283 11.7882 26 13 26C14.2118 26 15.1206 25.1283 15.9227 24.3587C16.38 23.9212 16.8512 23.4685 17.2656 23.2979C17.6452 23.14 18.2743 23.1307 18.8837 23.1214C20.0165 23.104 21.3003 23.0854 22.1929 22.1929C23.0854 21.3003 23.104 20.0165 23.1214 18.8837C23.1307 18.2743 23.14 17.6452 23.2979 17.2656C23.4685 16.8524 23.9212 16.38 24.3587 15.9227C25.1283 15.1206 26 14.2118 26 13C26 11.7882 25.1283 10.8794 24.3587 10.0773ZM23.0181 14.6378C22.4621 15.2181 21.8864 15.8182 21.5812 16.5553C21.2887 17.2633 21.2759 18.0723 21.2643 18.8558C21.2527 19.6683 21.2399 20.5191 20.8789 20.8789C20.5179 21.2388 19.6729 21.2527 18.8558 21.2643C18.0723 21.2759 17.2633 21.2887 16.5553 21.5812C15.8182 21.8864 15.2181 22.4621 14.6378 23.0181C14.0574 23.5741 13.4643 24.1429 13 24.1429C12.5357 24.1429 11.9379 23.5718 11.3622 23.0181C10.7865 22.4645 10.1818 21.8864 9.44473 21.5812C8.7367 21.2887 7.92768 21.2759 7.1442 21.2643C6.3317 21.2527 5.48089 21.2399 5.12107 20.8789C4.76125 20.5179 4.74732 19.6729 4.73571 18.8558C4.72411 18.0723 4.71134 17.2633 4.41884 16.5553C4.11357 15.8182 3.53786 15.2181 2.98187 14.6378C2.42589 14.0574 1.85714 13.4643 1.85714 13C1.85714 12.5357 2.42821 11.9391 2.98187 11.3622C3.53554 10.7854 4.11357 10.1818 4.41884 9.44473C4.71134 8.7367 4.72411 7.92768 4.73571 7.1442C4.74732 6.3317 4.76009 5.48089 5.12107 5.12107C5.48205 4.76125 6.32705 4.74732 7.1442 4.73571C7.92768 4.72411 8.7367 4.71134 9.44473 4.41884C10.1818 4.11357 10.7819 3.53786 11.3622 2.98187C11.9426 2.42589 12.5357 1.85714 13 1.85714C13.4643 1.85714 14.0621 2.42821 14.6378 2.98187C15.2135 3.53554 15.8182 4.11357 16.5553 4.41884C17.2633 4.71134 18.0723 4.72411 18.8558 4.73571C19.6683 4.74732 20.5191 4.76009 20.8789 5.12107C21.2388 5.48205 21.2527 6.32705 21.2643 7.1442C21.2759 7.92768 21.2887 8.7367 21.5812 9.44473C21.8864 10.1818 22.4621 10.7819 23.0181 11.3622C23.5741 11.9426 24.1429 12.5357 24.1429 13C24.1429 13.4643 23.5718 14.0609 23.0181 14.6378ZM12.0714 9.28571C12.0714 8.73475 11.908 8.19616 11.602 7.73805C11.2959 7.27995 10.8608 6.92289 10.3518 6.71205C9.84274 6.50121 9.28262 6.44604 8.74225 6.55353C8.20187 6.66101 7.70551 6.92633 7.31592 7.31592C6.92633 7.70551 6.66101 8.20187 6.55353 8.74225C6.44604 9.28262 6.50121 9.84274 6.71205 10.3518C6.92289 10.8608 7.27995 11.2959 7.73805 11.602C8.19616 11.908 8.73475 12.0714 9.28571 12.0714C10.0245 12.0714 10.7331 11.7779 11.2555 11.2555C11.7779 10.7331 12.0714 10.0245 12.0714 9.28571ZM8.35714 9.28571C8.35714 9.10206 8.4116 8.92253 8.51364 8.76983C8.61567 8.61712 8.76069 8.49811 8.93036 8.42783C9.10004 8.35754 9.28674 8.33916 9.46687 8.37498C9.64699 8.41081 9.81245 8.49925 9.94231 8.62912C10.0722 8.75898 10.1606 8.92443 10.1964 9.10456C10.2323 9.28468 10.2139 9.47139 10.1436 9.64106C10.0733 9.81074 9.9543 9.95576 9.8016 10.0578C9.6489 10.1598 9.46937 10.2143 9.28571 10.2143C9.03944 10.2143 8.80326 10.1165 8.62912 9.94231C8.45497 9.76817 8.35714 9.53199 8.35714 9.28571ZM16.7143 13.9286C16.1633 13.9286 15.6247 14.0919 15.1666 14.398C14.7085 14.7041 14.3515 15.1392 14.1406 15.6482C13.9298 16.1573 13.8746 16.7174 13.9821 17.2578C14.0896 17.7981 14.3549 18.2945 14.7445 18.6841C15.1341 19.0737 15.6304 19.339 16.1708 19.4465C16.7112 19.554 17.2713 19.4988 17.7803 19.288C18.2894 19.0771 18.7244 18.7201 19.0305 18.2619C19.3366 17.8038 19.5 17.2652 19.5 16.7143C19.5 15.9755 19.2065 15.2669 18.6841 14.7445C18.1617 14.2221 17.4531 13.9286 16.7143 13.9286ZM16.7143 17.6429C16.5306 17.6429 16.3511 17.5884 16.1984 17.4864C16.0457 17.3843 15.9267 17.2393 15.8564 17.0696C15.7861 16.9 15.7677 16.7133 15.8036 16.5331C15.8394 16.353 15.9278 16.1875 16.0577 16.0577C16.1875 15.9278 16.353 15.8394 16.5331 15.8036C16.7133 15.7677 16.9 15.7861 17.0696 15.8564C17.2393 15.9267 17.3843 16.0457 17.4864 16.1984C17.5884 16.3511 17.6429 16.5306 17.6429 16.7143C17.6429 16.9606 17.545 17.1967 17.3709 17.3709C17.1967 17.545 16.9606 17.6429 16.7143 17.6429ZM18.2998 9.01411L9.01411 18.2998C8.92783 18.3861 8.82541 18.4545 8.71269 18.5012C8.59997 18.5479 8.47915 18.5719 8.35714 18.5719C8.23513 18.5719 8.11432 18.5479 8.0016 18.5012C7.88887 18.4545 7.78645 18.3861 7.70018 18.2998C7.6139 18.2135 7.54547 18.1111 7.49878 17.9984C7.45209 17.8857 7.42805 17.7649 7.42805 17.6429C7.42805 17.5208 7.45209 17.4 7.49878 17.2873C7.54547 17.1746 7.6139 17.0722 7.70018 16.9859L16.9859 7.70018C17.0722 7.6139 17.1746 7.54547 17.2873 7.49878C17.4 7.45209 17.5208 7.42805 17.6429 7.42805C17.7649 7.42805 17.8857 7.45209 17.9984 7.49878C18.1111 7.54547 18.2135 7.6139 18.2998 7.70018C18.3861 7.78645 18.4545 7.88887 18.5012 8.0016C18.5479 8.11432 18.5719 8.23513 18.5719 8.35714C18.5719 8.47915 18.5479 8.59997 18.5012 8.71269C18.4545 8.82541 18.3861 8.92783 18.2998 9.01411Z"
+                                            fill="#000326" />
+                                    </svg>
+                                    <span>From $100</span>
+                                </div>
+                            </div>
+                            <div class="service-btn">
+                                <a href="#">Booking</a>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img src="./assets/service/service-03.png" alt=""></div>
+                        <div class="service-card-wrp">
+                            <div class="service-cnt">
+                                <h3>Dentures</h3>
+                                <p>Varius duis at consectetur lorem donec massa sapien faucib nibh venenatis.</p>
+                            </div>
+                            <div class="service-mid">
+                                <div>
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13 0C20.1799 0 26 5.8201 26 13C26 20.1799 20.1799 26 13 26C5.8201 26 0 20.1799 0 13C0 5.8201 5.8201 0 13 0ZM13 2.6C10.2417 2.6 7.59647 3.69571 5.64609 5.64609C3.69571 7.59647 2.6 10.2417 2.6 13C2.6 15.7583 3.69571 18.4035 5.64609 20.3539C7.59647 22.3043 10.2417 23.4 13 23.4C15.7583 23.4 18.4035 22.3043 20.3539 20.3539C22.3043 18.4035 23.4 15.7583 23.4 13C23.4 10.2417 22.3043 7.59647 20.3539 5.64609C18.4035 3.69571 15.7583 2.6 13 2.6ZM13 5.2C13.3184 5.20004 13.6257 5.31694 13.8637 5.52853C14.1016 5.74012 14.2536 6.03167 14.2909 6.3479L14.3 6.5V12.4618L17.8191 15.9809C18.0523 16.2148 18.1876 16.5288 18.1977 16.8589C18.2078 17.189 18.0918 17.5106 17.8734 17.7584C17.6549 18.0061 17.3504 18.1614 17.0216 18.1927C16.6928 18.224 16.3644 18.129 16.1031 17.927L15.9809 17.8191L12.0809 13.9191C11.8789 13.7169 11.7491 13.4537 11.7117 13.1703L11.7 13V6.5C11.7 6.15522 11.837 5.82456 12.0808 5.58076C12.3246 5.33696 12.6552 5.2 13 5.2Z"
+                                            fill="#000326" />
+                                    </svg> <span>15 To 45 mins</span>
+                                </div>
+                                <div>
+
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M24.3587 10.0773C23.9212 9.62 23.4685 9.14875 23.2979 8.73438C23.14 8.35482 23.1307 7.72571 23.1214 7.11634C23.104 5.98348 23.0854 4.69973 22.1929 3.80714C21.3003 2.91455 20.0165 2.89598 18.8837 2.87857C18.2743 2.86929 17.6452 2.86 17.2656 2.70214C16.8524 2.53152 16.38 2.07884 15.9227 1.64125C15.1218 0.871696 14.2118 0 13 0C11.7882 0 10.8794 0.871696 10.0773 1.64125C9.62 2.07884 9.14875 2.53152 8.73438 2.70214C8.35714 2.86 7.72571 2.86929 7.11634 2.87857C5.98348 2.89598 4.69973 2.91455 3.80714 3.80714C2.91455 4.69973 2.90179 5.98348 2.87857 7.11634C2.86929 7.72571 2.86 8.35482 2.70214 8.73438C2.53152 9.14759 2.07884 9.62 1.64125 10.0773C0.871696 10.8794 0 11.7882 0 13C0 14.2118 0.871696 15.1206 1.64125 15.9227C2.07884 16.38 2.53152 16.8512 2.70214 17.2656C2.86 17.6452 2.86929 18.2743 2.87857 18.8837C2.89598 20.0165 2.91455 21.3003 3.80714 22.1929C4.69973 23.0854 5.98348 23.104 7.11634 23.1214C7.72571 23.1307 8.35482 23.14 8.73438 23.2979C9.14759 23.4685 9.62 23.9212 10.0773 24.3587C10.8782 25.1283 11.7882 26 13 26C14.2118 26 15.1206 25.1283 15.9227 24.3587C16.38 23.9212 16.8512 23.4685 17.2656 23.2979C17.6452 23.14 18.2743 23.1307 18.8837 23.1214C20.0165 23.104 21.3003 23.0854 22.1929 22.1929C23.0854 21.3003 23.104 20.0165 23.1214 18.8837C23.1307 18.2743 23.14 17.6452 23.2979 17.2656C23.4685 16.8524 23.9212 16.38 24.3587 15.9227C25.1283 15.1206 26 14.2118 26 13C26 11.7882 25.1283 10.8794 24.3587 10.0773ZM23.0181 14.6378C22.4621 15.2181 21.8864 15.8182 21.5812 16.5553C21.2887 17.2633 21.2759 18.0723 21.2643 18.8558C21.2527 19.6683 21.2399 20.5191 20.8789 20.8789C20.5179 21.2388 19.6729 21.2527 18.8558 21.2643C18.0723 21.2759 17.2633 21.2887 16.5553 21.5812C15.8182 21.8864 15.2181 22.4621 14.6378 23.0181C14.0574 23.5741 13.4643 24.1429 13 24.1429C12.5357 24.1429 11.9379 23.5718 11.3622 23.0181C10.7865 22.4645 10.1818 21.8864 9.44473 21.5812C8.7367 21.2887 7.92768 21.2759 7.1442 21.2643C6.3317 21.2527 5.48089 21.2399 5.12107 20.8789C4.76125 20.5179 4.74732 19.6729 4.73571 18.8558C4.72411 18.0723 4.71134 17.2633 4.41884 16.5553C4.11357 15.8182 3.53786 15.2181 2.98187 14.6378C2.42589 14.0574 1.85714 13.4643 1.85714 13C1.85714 12.5357 2.42821 11.9391 2.98187 11.3622C3.53554 10.7854 4.11357 10.1818 4.41884 9.44473C4.71134 8.7367 4.72411 7.92768 4.73571 7.1442C4.74732 6.3317 4.76009 5.48089 5.12107 5.12107C5.48205 4.76125 6.32705 4.74732 7.1442 4.73571C7.92768 4.72411 8.7367 4.71134 9.44473 4.41884C10.1818 4.11357 10.7819 3.53786 11.3622 2.98187C11.9426 2.42589 12.5357 1.85714 13 1.85714C13.4643 1.85714 14.0621 2.42821 14.6378 2.98187C15.2135 3.53554 15.8182 4.11357 16.5553 4.41884C17.2633 4.71134 18.0723 4.72411 18.8558 4.73571C19.6683 4.74732 20.5191 4.76009 20.8789 5.12107C21.2388 5.48205 21.2527 6.32705 21.2643 7.1442C21.2759 7.92768 21.2887 8.7367 21.5812 9.44473C21.8864 10.1818 22.4621 10.7819 23.0181 11.3622C23.5741 11.9426 24.1429 12.5357 24.1429 13C24.1429 13.4643 23.5718 14.0609 23.0181 14.6378ZM12.0714 9.28571C12.0714 8.73475 11.908 8.19616 11.602 7.73805C11.2959 7.27995 10.8608 6.92289 10.3518 6.71205C9.84274 6.50121 9.28262 6.44604 8.74225 6.55353C8.20187 6.66101 7.70551 6.92633 7.31592 7.31592C6.92633 7.70551 6.66101 8.20187 6.55353 8.74225C6.44604 9.28262 6.50121 9.84274 6.71205 10.3518C6.92289 10.8608 7.27995 11.2959 7.73805 11.602C8.19616 11.908 8.73475 12.0714 9.28571 12.0714C10.0245 12.0714 10.7331 11.7779 11.2555 11.2555C11.7779 10.7331 12.0714 10.0245 12.0714 9.28571ZM8.35714 9.28571C8.35714 9.10206 8.4116 8.92253 8.51364 8.76983C8.61567 8.61712 8.76069 8.49811 8.93036 8.42783C9.10004 8.35754 9.28674 8.33916 9.46687 8.37498C9.64699 8.41081 9.81245 8.49925 9.94231 8.62912C10.0722 8.75898 10.1606 8.92443 10.1964 9.10456C10.2323 9.28468 10.2139 9.47139 10.1436 9.64106C10.0733 9.81074 9.9543 9.95576 9.8016 10.0578C9.6489 10.1598 9.46937 10.2143 9.28571 10.2143C9.03944 10.2143 8.80326 10.1165 8.62912 9.94231C8.45497 9.76817 8.35714 9.53199 8.35714 9.28571ZM16.7143 13.9286C16.1633 13.9286 15.6247 14.0919 15.1666 14.398C14.7085 14.7041 14.3515 15.1392 14.1406 15.6482C13.9298 16.1573 13.8746 16.7174 13.9821 17.2578C14.0896 17.7981 14.3549 18.2945 14.7445 18.6841C15.1341 19.0737 15.6304 19.339 16.1708 19.4465C16.7112 19.554 17.2713 19.4988 17.7803 19.288C18.2894 19.0771 18.7244 18.7201 19.0305 18.2619C19.3366 17.8038 19.5 17.2652 19.5 16.7143C19.5 15.9755 19.2065 15.2669 18.6841 14.7445C18.1617 14.2221 17.4531 13.9286 16.7143 13.9286ZM16.7143 17.6429C16.5306 17.6429 16.3511 17.5884 16.1984 17.4864C16.0457 17.3843 15.9267 17.2393 15.8564 17.0696C15.7861 16.9 15.7677 16.7133 15.8036 16.5331C15.8394 16.353 15.9278 16.1875 16.0577 16.0577C16.1875 15.9278 16.353 15.8394 16.5331 15.8036C16.7133 15.7677 16.9 15.7861 17.0696 15.8564C17.2393 15.9267 17.3843 16.0457 17.4864 16.1984C17.5884 16.3511 17.6429 16.5306 17.6429 16.7143C17.6429 16.9606 17.545 17.1967 17.3709 17.3709C17.1967 17.545 16.9606 17.6429 16.7143 17.6429ZM18.2998 9.01411L9.01411 18.2998C8.92783 18.3861 8.82541 18.4545 8.71269 18.5012C8.59997 18.5479 8.47915 18.5719 8.35714 18.5719C8.23513 18.5719 8.11432 18.5479 8.0016 18.5012C7.88887 18.4545 7.78645 18.3861 7.70018 18.2998C7.6139 18.2135 7.54547 18.1111 7.49878 17.9984C7.45209 17.8857 7.42805 17.7649 7.42805 17.6429C7.42805 17.5208 7.45209 17.4 7.49878 17.2873C7.54547 17.1746 7.6139 17.0722 7.70018 16.9859L16.9859 7.70018C17.0722 7.6139 17.1746 7.54547 17.2873 7.49878C17.4 7.45209 17.5208 7.42805 17.6429 7.42805C17.7649 7.42805 17.8857 7.45209 17.9984 7.49878C18.1111 7.54547 18.2135 7.6139 18.2998 7.70018C18.3861 7.78645 18.4545 7.88887 18.5012 8.0016C18.5479 8.11432 18.5719 8.23513 18.5719 8.35714C18.5719 8.47915 18.5479 8.59997 18.5012 8.71269C18.4545 8.82541 18.3861 8.92783 18.2998 9.01411Z"
+                                            fill="#000326" />
+                                    </svg>
+                                    <span>From $100</span>
+                                </div>
+                            </div>
+                            <div class="service-btn">
+                                <a href="#">Booking</a>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ready bg-sinbad relative">
+
+            <div class="container">
+                <div class="ready-inner-wrapper text-center">
+                    <div class="ready-cnt">
+                        <strong class="sec-badge">Ready For Treatment</strong>
+                        <h2>Get $25 Off On New Patient Check-Ups & Treatments</h2>
+                        <p class="sec-des">Nunc tincidunt mollis dui in tempor. Maecenas ut leo vitae purus condimentum
+                            dignissim. Duis ultricies libero sit amet aliquam fermentum. Fusce faucibus. Maecenas nulla
+                            erat, eleifend a finibus quis, consequat et neque.</p>
+                        <div class="sec-btn">
+                            <a href="#" class="btn btn-blue">OUR SERVICES</a>
+                            <a href="#" class="btn btn-white">GET AN APPOINTMENT</a>
+                        </div>
+                    </div>
+                    <div class="member-wrapper">
+                        <div class="member-profile">
+                            <div class="member-img">
+                                <img src="./assets/ready/member-01.png" alt="">
+                            </div>
+                            <div class="member-img">
+                                <img src="./assets/ready/member-02.png" alt="">
+                            </div>
+                            <div class="member-img">
+                                <img src="./assets/ready/member-03.png" alt="">
+                            </div>
+                            <div class="member-img">
+                                <img src="./assets/ready/member-04.png" alt="">
+                            </div>
+                        </div>
+                        <span>1.8K+ Members</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="rdy-img rdy-img-lft">
+                <img src="./assets/ready/left.png" class="object-cover h-full w-full" alt="">
+            </div>
+            <div class="rdy-img rdy-img-rgt">
+                <img src="./assets/ready/right.png" class="object-cover h-full w-full" alt="">
+            </div>
+        </section>
+        <section class="contact bg-riceflower">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-left">
+                        <div class="map w-full aspect-video h-full">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.425550866605!2d145.27335627573592!3d-37.80004717197905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad63a8eca18fbd3%3A0xf10ea4d6cf44f3c1!2s143%20Mt%20Dandenong%20Rd%2C%20Croydon%20VIC%203136%2C%20Australia!5e1!3m2!1sen!2sin!4v1774680729310!5m2!1sen!2sin"
+                                loading="lazy" class="w-full h-full border-0"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                    </div>
+                    <div class="contact-right px-8 md:px-0">
+                        <div class="contact-info">
+                            <h2 class="text-left">We're Here When You Need Us</h2>
+
+                            <ul class="info">
+                                <li>
+                                    <h3><svg width="20" height="28" viewBox="0 0 20 28" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M20 9.8C20 8.51305 19.7413 7.23869 19.2388 6.0497C18.7362 4.86071 17.9997 3.78037 17.0711 2.87035C16.1425 1.96034 15.0401 1.23848 13.8268 0.745981C12.6136 0.253484 11.3132 0 10 0C8.68678 0 7.38642 0.253484 6.17317 0.745981C4.95991 1.23848 3.85752 1.96034 2.92893 2.87035C2.00035 3.78037 1.26375 4.86071 0.761204 6.0497C0.258657 7.23869 -1.95685e-08 8.51305 0 9.8C0 11.7418 0.584286 13.5478 1.57857 15.071H1.56714L10 28L18.4329 15.071H18.4229C19.4528 13.4982 20.0002 11.6688 20 9.8ZM10 14C8.86336 14 7.77327 13.5575 6.96954 12.7698C6.16581 11.9822 5.71429 10.9139 5.71429 9.8C5.71429 8.68609 6.16581 7.6178 6.96954 6.83015C7.77327 6.0425 8.86336 5.6 10 5.6C11.1366 5.6 12.2267 6.0425 13.0305 6.83015C13.8342 7.6178 14.2857 8.68609 14.2857 9.8C14.2857 10.9139 13.8342 11.9822 13.0305 12.7698C12.2267 13.5575 11.1366 14 10 14Z"
+                                                fill="#1B3858" />
+                                        </svg> <span>Address</span></h3>
+                                    <span class="block">143 Mt Dandenong Rd, Croydon VIC 3136</span>
+                                </li>
+                                <li>
+
+
+                                    <h3>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M19.9989 14.9111V18.84C19.999 19.1213 19.8924 19.3922 19.7007 19.598C19.5089 19.8038 19.2462 19.9292 18.9656 19.9489C18.4805 19.983 18.0842 20 17.7768 20C7.95845 20 0 12.0411 0 2.22222C0 1.91556 0.0170361 1.51926 0.0511083 1.03333C0.0707987 0.752716 0.19619 0.490012 0.401982 0.298232C0.607773 0.106452 0.878643 -0.000127148 1.15994 2.85088e-07H5.08861C5.22642 -0.000139261 5.35937 0.0509545 5.46162 0.143356C5.56387 0.235758 5.62813 0.36287 5.64191 0.5C5.66709 0.754815 5.6908 0.959259 5.71302 1.11333C5.9338 2.65436 6.3863 4.15315 7.05516 5.55889C7.16071 5.78111 7.09183 6.04667 6.89184 6.18889L4.49419 7.90222C5.96046 11.3181 8.68254 14.0403 12.0982 15.5067L13.8092 13.1133C13.8789 13.0152 13.9809 12.9448 14.0974 12.9145C14.2138 12.8842 14.3372 12.896 14.4459 12.9478C15.8514 13.6154 17.3497 14.0668 18.8901 14.2867C19.0441 14.3089 19.2478 14.3326 19.5011 14.3578C19.6381 14.3718 19.7649 14.4362 19.8571 14.5384C19.9492 14.6407 19.9991 14.7735 19.9989 14.9111Z"
+                                                fill="#1B3858" />
+                                        </svg>
+                                        <span>Phone</span>
+                                    </h3>
+                                    <span class="block"> (03) 9723 1300</span>
+                                </li>
+                                <li>
+                                    <h3><svg width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2 16C1.45 16 0.979333 15.8043 0.588 15.413C0.196667 15.0217 0.000666667 14.5507 0 14V2C0 1.45 0.196 0.979333 0.588 0.588C0.98 0.196666 1.45067 0.000666667 2 0H18C18.55 0 19.021 0.196 19.413 0.588C19.805 0.98 20.0007 1.45067 20 2V14C20 14.55 19.8043 15.021 19.413 15.413C19.0217 15.805 18.5507 16.0007 18 16H2ZM18 4L10.525 8.675C10.4417 8.725 10.3543 8.76267 10.263 8.788C10.1717 8.81333 10.084 8.82567 10 8.825C9.916 8.82433 9.82867 8.812 9.738 8.788C9.64733 8.764 9.55967 8.72633 9.475 8.675L2 4V14H18V4ZM10 7L18 2H2L10 7ZM2 4.25V2.775V2.8V2.788V4.25Z"
+                                                fill="#1B3858" />
+                                        </svg><span>Mail</span></h3>
+                                    <a class="block" href="mailto:iam@gmail.com">iamsabujjer@gmail.com</a>
+                                </li>
+                                <li>
+                                    <span class="note flex items-center gap-3"><svg width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2.22222 7.125L3.88889 1.78125H16.1111L17.7778 7.125M16.1111 13.0625C15.6691 13.0625 15.2452 12.8748 14.9326 12.5408C14.62 12.2067 14.4444 11.7537 14.4444 11.2812C14.4444 10.8088 14.62 10.3558 14.9326 10.0217C15.2452 9.68767 15.6691 9.5 16.1111 9.5C16.5531 9.5 16.9771 9.68767 17.2896 10.0217C17.6022 10.3558 17.7778 10.8088 17.7778 11.2812C17.7778 11.7537 17.6022 12.2067 17.2896 12.5408C16.9771 12.8748 16.5531 13.0625 16.1111 13.0625ZM3.88889 13.0625C3.44686 13.0625 3.02294 12.8748 2.71038 12.5408C2.39782 12.2067 2.22222 11.7537 2.22222 11.2812C2.22222 10.8088 2.39782 10.3558 2.71038 10.0217C3.02294 9.68767 3.44686 9.5 3.88889 9.5C4.33092 9.5 4.75484 9.68767 5.0674 10.0217C5.37996 10.3558 5.55556 10.8088 5.55556 11.2812C5.55556 11.7537 5.37996 12.2067 5.0674 12.5408C4.75484 12.8748 4.33092 13.0625 3.88889 13.0625ZM17.6889 1.1875C17.4667 0.49875 16.8444 0 16.1111 0H3.88889C3.15556 0 2.53333 0.49875 2.31111 1.1875L0 8.3125V17.8125C0 18.1274 0.117063 18.4295 0.325437 18.6522C0.533811 18.8749 0.816426 19 1.11111 19H2.22222C2.51691 19 2.79952 18.8749 3.0079 18.6522C3.21627 18.4295 3.33333 18.1274 3.33333 17.8125V16.625H16.6667V17.8125C16.6667 18.1274 16.7837 18.4295 16.9921 18.6522C17.2005 18.8749 17.4831 19 17.7778 19H18.8889C19.1836 19 19.4662 18.8749 19.6746 18.6522C19.8829 18.4295 20 18.1274 20 17.8125V8.3125L17.6889 1.1875Z"
+                                                fill="#1B3858" />
+                                        </svg> <span>We provide ample parking for our patients</span></span>
+                                </li>
+                            </ul>
+                            <h3
+                                class="timing mb-8 text-[14px] sm:text-[16px] md:text-[18px] xl:text-[24px] 2xl:text-[28px] leading-4 md:leading-6 xl:leading-10">
+                                Opening Hours</h3>
+                            <div class="timing-box">
+                                <ul>
+                                    <li><span>Monday</span> <span>8:00 AM - 5:30 PM</span></li>
+                                    <li><span>Tuesday</span> <span>8:30 AM - 5:30 PM</span></li>
+                                    <li><span>Wednesday</span> <span>8:30 AM - 5:30 PM</span></li>
+                                    <li><span>Thursday</span> <span>8:00 AM - 5:30 PM</span></li>
+                                    <li><span>Friday</span> <span>8:00 AM - 5:30 PM</span></li>
+                                    <li><span>Saturday</span> <span>9:00 AM - 2:00 PM</span></li>
+                                    <li><span>Sunday</span> <span>Closed</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-team bg-riceflower">
+            <div class="container">
+                <div class="flex flex-col md:flex-row justify-evenly items-stretch gap-8 xl:gap-10 2xl:gap-12">
+                    <div class="">
+                        <div class="form-part">
+                            <form>
+                                <h2 class="text-left">Contact Our Friendly Team</h2>
+                                <div class="input-name">
+                                    <label for="name">Name</label>
+                                    <input class="form-field" type="text" id="name" placeholder="Name" required />
+                                </div>
+                                <div class="input-email">
+                                    <label for="email">Email</label>
+                                    <input class="form-field" type="email" id="email" placeholder="Email address"
+                                        required />
+                                </div>
+                                <div class="input-mobile">
+                                    <label for="mobile">Mobile</label>
+                                    <input class="form-field" type="text" placeholder="Mobile" />
+                                </div>
+                                <div class="message">
+                                    <label for="message">Message</label>
+                                    <textarea class="form-field" id="message" placeholder="Message"></textarea>
+                                </div>
+
+                                <button type="submit">SUBMIT</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block">
+                        <div class="image-box">
+                            <img src="./assets/contact/team-img.png" alt="Office Image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="py-12.5 bg-deepfir text-white">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-title text-white">Join Our Newsletter</div>
+                <div class="ftr-form">
+                    <form action="">
+                        <div class="ftr-email">
+                            <input type="email" name="subscribe" id="subscribe" placeholder="Email address">
+                        </div>
+                        <div class="ftr-submit">
+                            <button type="submit">subscribe</button>
+                        </div>
+                </div>
+            </div>
+            </form>
+            <div class="footer-mid  my-8 md:my-12 lg:my-17 2xl:my-22">
+
+                <div class="">
+                    <div class="footer-hdr">The Fine Tooth Company</div>
+                    <p class="footer-para font-normal">
+                        We specialise in personalised dental care tailored to meet the
+                        unique needs of each patient.
+                    </p>
+                    <button class="book-btn">BOOK ONLINE</button>
+
+                </div>
+                <div class="">
+                    <div class="footer-hdr">Important Links</div>
+
+                    <ul class="font-normal">
+                        <li><a href="" class="links">Home</a></li>
+                        <li> <a href="" class="links">About Us</a></li>
+                        <li><a href="" class="links">Treatments</a></li>
+                        <li> <a href="" class="links"> Dental Implants</a></li>
+                        <li> <a href="" class="links">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <div class="footer-hdr">Contact Us</div>
+
+                    <ul class="font-normal">
+                        <li><a href="#">143 Mt Dandenong Rd,<br />Croydon VIC 3136</a></li>
+                        <li><a href="#">Phone: (03) 9723 1100</a></li>
+                        <li><a href="#">Email:</a></li>
+                        <li><a href="#">croydon@finetooth.com.au</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <table class="border-spacing-1">
+                        <thead class="">
+                            <tr>
+                                <td class="footer-hdr">Opening Hours</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td>8:00 AM - 5:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td>8:30 AM - 5:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td>8:30 AM - 5:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td>8:00 AM - 5:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td>8:00 AM - 5:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>9:00 AM - 2:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>Closed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="footer-bottom text-center">
+                © 2025 <a href="index.html">The Fine Tooth Company</a>, All Rights Reserved
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- 
+    <div class="bg-red-200 sm:bg-yellow-200 md:bg-blue-200 lg:bg-green-200 xl:bg-purple-200 p-5 text-black">
+        <span class="block sm:hidden">xs</span>
+
+        <span class="hidden sm:block md:hidden">sm</span>
+
+        <span class="hidden md:block lg:hidden">md</span>
+
+        <span class="hidden lg:block xl:hidden">lg</span>
+
+        <span class="hidden xl:block 2xl:hidden">xl</span>
+
+        <span class="hidden 2xl:block">2xl</span>
+
+    </div> -->
+
+    <script>
+        const btn = document.querySelector('.nav-toggle');
+        const menu = document.getElementById('mobileMenu');
+
+        btn.onclick = function () {
+            menu.classList.toggle('hidden');
+            btn.classList.toggle('open');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./src/index.js"></script>
+</body>
+
+</html>
